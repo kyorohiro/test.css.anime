@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>Hello World</title>
+</head>
+<body>
+Game 
+<style>
+.n1 {
+  animation-name: d1;
+  animation-duration: 5s;
+  animation-iteration-count: 10 ease-in-out forwards;
+}
+.n2 {
+  animation-name: d2;
+  animation-duration: 5s;
+  animation-iteration-count: 10 ease-in-out forwards;
+}
+
+@keyframes d1 {
+
+  from {
+    left: 30px;
+    top: 0px;
+  }
+
+  to {
+    left: 100px;
+    top: 100px;
+  }
+
+}
+
+@keyframes d2 {
+
+  from {
+    left: 100px;
+    top: 100px;
+  }
+
+  to {
+    left: 100px;
+    top: 500px;
+  }
+
+}
+</style>
+<div style="position:relative;">
+  <div id="n" class="n1" style="position:absolute" >YAMAA</div>
+</div>
+<script>
+var x = document.getElementById("n");
+function myFunction2(e) {
+  console.log("XX=");
+  x.parentNode.removeChild(x);
+}
+
+function myFunction(e) {
+  console.log("XX=");
+  x.className = "n2" 
+  x.removeEventListener("animationend", myFunction);
+  x.addEventListener("animationend", myFunction2);
+}
+x.addEventListener("animationend", myFunction);
+</script>
+</body>
+</html>
